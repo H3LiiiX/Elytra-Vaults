@@ -1,1 +1,3 @@
 execute as @e[type=item_frame] unless entity @e[type=player,distance=..10] run scoreboard players set @s elytraCheck 1
+execute as @e[type=marker,tag=elytra_vault_marker] at @s if block ~ ~ ~ vault run data modify entity @s data.rewarded_players set from block ~ ~ ~ server_data.rewarded_players
+execute as @e[type=marker,tag=elytra_vault_marker] at @s unless block ~ ~ ~ vault run function elytra_vault:restore_vault
